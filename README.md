@@ -15,3 +15,6 @@ Pada commit 3 ini, terdapat perubahan pada kode yang telah dibuat. Sekarang terd
 
 Kebutuhan refactoring untuk memisahkan penanganan kode ini dipelrukan untuk membuat kode lebih dinamis. Refactoring selanjutnya akan terus dibutuhkan juga untuk meningkatkan kejelasan dan mempermudah modifikasi pada kode. Dengan pemisahan respons seperti yang sudah kita buat, kode akan menjadi lebih mudah untuk dimengerti dan dipelihara.
 ![Commit 3](image/commit-3.png)
+
+### Commit 4 Relflection
+Pada perubahan yang kita lakukan di commit 4 ini, terdapat kode yang membuat program menunggu sejenak. Jika pada awalnya ketika kita mengakses url program di http://127.0.0.1:7878 program akan langsung berjalan dan mengeluarkan isi html nya, sekarang terdapat penambahan baru. Pada url http://127.0.0.1:7878/sleep ketika program di akses akan ada waktu tunggu selama 10 detik sebelum akhisnya loading. Waktu tunggu ini disebabkan oleh kode `GET /sleep` untuk konfigurasi menuju url /sleep dan kode `thread::sleep(Duration::from_secs(10))` yang membuat program 'sleep' selama 10 detik sebelum memasuki program yang terlah di buat. Jika dibandingkan dengan url ttp://127.0.0.1:7878 saja,  http://127.0.0.1:7878/sleep akan memakan lebih banyak waktu karena waktu sleep tersebut.
